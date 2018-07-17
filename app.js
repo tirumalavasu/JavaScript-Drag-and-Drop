@@ -7,46 +7,48 @@
 	        <div class="row">
 		        <div class="col-md-6">
 		            <h1>Elements</h1>
-		            <div class="jumbotron"></div>
+		            <div class="jumbotron" id="elements"></div>
 		        </div>
 		        <div class="col-md-6">
 		            <h1>Preview</h1>
-		            <div class="jumbotron"></div>
+		            <div class="jumbotron" id="preview"></div>
 		        </div>
 		    </div>
 		</div>
     `
     app.appendChild(layout)
 
-    let loader = document.createElement('div')
-    loader.innerHTML = `
-        <div class="lds-css ng-scope"><div style="width:100%;height:100%;display:none" id="loader" class="lds-ball"><div></div></div>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+
+    let elementsPanel = document.getElementById('elements')
+    let elements = document.createElement('div')
+    elements.setAttribute('draggable', 'true')
+    elements.addEventListener('ondragstart', drag)
+    elements.innerHTML = `
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">${Elements.input()}</div>
     `
+    elementsPanel.appendChild(elements)
 
-    function init () {
-        // alert('Still Loading!!!')
-        console.log('loading')
-        console.log(new Date())
-        app.appendChild(loader)
-    }
-
-    function initOnCompleteLoad () {
-        // alert('Loaded!')
-        console.log('loaded')
-        console.log(new Date())
-        app.removeChild(loader)
-    }
-
-    // On document ready
-    document.onreadystatechange = function () {
-        let state = document.readyState;
-        if (state === 'interactive') {
-            setTimeout(function () {
-                init()
-            }, 3000)
-        } else if (state === 'complete') {
-            initOnCompleteLoad()
-        }
-    }
+    let previewPanel = document.getElementById('preview')
+    let preview = document.createElement('div')
+    preview.setAttribute('draggable', 'true')
+    preview.addEventListener('ondrop', drop)
+    preview.addEventListener('ondragover', allowDrop)
+    preview.innerHTML = `
+        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    `
+    previewPanel.appendChild(preview)
 
 })()

@@ -2,6 +2,9 @@
   <dictionary name="vasu">
     <words>
       <w>jumbotron</w>
+      <w>ondragover</w>
+      <w>ondragstart</w>
+      <w>ondrop</w>
       <w>onreadystatechange</w>
     </words>
   </dictionary>
