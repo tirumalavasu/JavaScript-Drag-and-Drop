@@ -4,24 +4,40 @@
 
 #elements, #preview {
     min-height: 60px;
-    padding: 16px;
-    border: 1px solid #aaaaaa;
+}
+
+#preview {
+    padding: 32px;
+    border: 1px solid dodgerblue;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
 }
 
-#input, #col-md-12, .col-md-12, .input {
+#configPanel {
+    width: 240px;
+    background-color: #c4dff6;
+    color: #333333;
+    float: right;
+    display: block;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#preview #input, #preview #col-md-12, #preview .col-md-12, #preview .input {
     min-height: 60px;
     padding: 8px;
-    border: 1px solid #aaaaaa;
+    border: 1px solid dodgerblue;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
     margin-bottom: 16px;
+    display: block;
 }
 
-#preview .config-button {
+#preview .config-button, #preview .remove-button {
     cursor: pointer;
     width: 25px;
     height: 25px;
@@ -29,7 +45,8 @@
     padding: 2px;
     border-radius: 50%;
     text-align: center;
-    box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 10px -10px rgba(0,0,0,0.4);
+    border: 1px solid #ccc;
     font-size: 15px;
     float: right;
     margin-top: -18px;
@@ -37,16 +54,52 @@
 }
 
 #preview .remove-button {
-    cursor: pointer;
-    width: 25px;
-    height: 25px;
-    background: #fff;
-    padding: 2px;
-    border-radius: 50%;
-    text-align: center;
-    box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
-    font-size: 15px;
-    float: right;
-    margin-top: -18px;
     margin-right: -18px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #c4dff6;
+    overflow-x: hidden;
+    padding: 24px 8px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #333;
+    display: block;
+    background-color: #fff;
+    margin-bottom: 8px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0 10px;
+    width: 100%;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.element-label {
+    font-size: 12px;
+    background-color: #f9f9f9;
+    width: auto;
+    display: inline-block;
 }

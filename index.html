@@ -11,26 +11,20 @@
         <div id="app">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h1>Elements</h1>
-                        <div class="jumbotron">
-                            <div id="elements" class="col-md-12">
-                                <div id="col-md-12" class="col-md-12 draggable-element" draggable="true" ondragstart="drag(event)">
-                                    col-md-12
-                                </div>
-                                <div id="input" class="form-group input draggable-element" draggable="true" ondragstart="drag(event)">
-                                    <label for="inputElement">Input</label>
-                                    <input type="text" class="form-control" id="inputElement" placeholder="Enter input">
-                                    <small id="emailHelp" class="form-text text-muted">Hint</small>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="elements" class="sidenav">
+                        <a id="col-md-12" class="col-md-12 draggable-element" data-type="colMd12" data-label="col-md-12" draggable="true" ondragstart="drag(event)">col-md-12</a>
+                        <a id="input" class="col-md-12 draggable-element" data-type="input" data-label="Input" draggable="true" ondragstart="drag(event)">input</a>
                     </div>
-                    <div class="col-md-6">
+
+                    <div class="main" id="main">
                         <h1>Preview</h1>
-                        <div class="jumbotron">
+                        <div class="col-md-12">
                             <div id="preview" class="col-md-12" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                         </div>
+                    </div>
+
+                    <div id="configPanel">
+
                     </div>
                 </div>
             </div>
