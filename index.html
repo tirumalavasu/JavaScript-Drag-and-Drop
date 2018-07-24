@@ -3,11 +3,38 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
         <link rel="stylesheet" href="./app.css">
     </head>
     <body>
-        <div id="app"></div>
+        <div id="app">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1>Elements</h1>
+                        <div class="jumbotron">
+                            <div id="elements" class="col-md-12">
+                                <div id="col-md-12" class="col-md-12 draggable-element" draggable="true" ondragstart="drag(event)">
+                                    col-md-12
+                                </div>
+                                <div id="input" class="form-group input draggable-element" draggable="true" ondragstart="drag(event)">
+                                    <label for="inputElement">Input</label>
+                                    <input type="text" class="form-control" id="inputElement" placeholder="Enter input">
+                                    <small id="emailHelp" class="form-text text-muted">Hint</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h1>Preview</h1>
+                        <div class="jumbotron">
+                            <div id="preview" class="col-md-12" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

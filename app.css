@@ -2,59 +2,51 @@
     margin-top: 8px;
 }
 
-@keyframes lds-ball {
-    0%, 100% {
-        animation-timing-function: cubic-bezier(0.45, 0, 0.9, 0.55);
-    }
-    0% {
-        -webkit-transform: translate(0, 0);
-        transform: translate(0, 0);
-    }
-    50% {
-        -webkit-transform: translate(0, 108px);
-        transform: translate(0, 108px);
-        animation-timing-function: cubic-bezier(0, 0.45, 0.55, 0.9);
-    }
-    100% {
-        -webkit-transform: translate(0, 0);
-        transform: translate(0, 0);
-    }
+#elements, #preview {
+    min-height: 60px;
+    padding: 16px;
+    border: 1px solid #aaaaaa;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 }
-@-webkit-keyframes lds-ball {
-    0%, 100% {
-        animation-timing-function: cubic-bezier(0.45, 0, 0.9, 0.55);
-    }
-    0% {
-        -webkit-transform: translate(0, 0);
-        transform: translate(0, 0);
-    }
-    50% {
-        -webkit-transform: translate(0, 108px);
-        transform: translate(0, 108px);
-        animation-timing-function: cubic-bezier(0, 0.45, 0.55, 0.9);
-    }
-    100% {
-        -webkit-transform: translate(0, 0);
-        transform: translate(0, 0);
-    }
+
+#input, #col-md-12, .col-md-12, .input {
+    min-height: 60px;
+    padding: 8px;
+    border: 1px solid #aaaaaa;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-bottom: 16px;
 }
-.lds-ball {
-    position: relative;
-}
-.lds-ball div {
-    position: absolute;
-    width: 52px;
-    height: 52px;
+
+#preview .config-button {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    padding: 2px;
     border-radius: 50%;
-    background: #FF7C81;
-    left: 74px;
-    top: 20px;
-    -webkit-animation: lds-ball 1s linear infinite;
-    animation: lds-ball 1s linear infinite;
+    text-align: center;
+    box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+    font-size: 15px;
+    float: right;
+    margin-top: -18px;
+    margin-right: 8px;
 }
-.lds-ball {
-    width: 200px !important;
-    height: 200px !important;
-    -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
-    transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+
+#preview .remove-button {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    padding: 2px;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+    font-size: 15px;
+    float: right;
+    margin-top: -18px;
+    margin-right: -18px;
 }
